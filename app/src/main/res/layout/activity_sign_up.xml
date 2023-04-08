@@ -47,68 +47,85 @@
                 android:textSize="@dimen/_15ssp" />
     </FrameLayout>
 
-            <EditText
-                android:id="@+id/inputName"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:background="@color/input_background"
-                android:hint="Nhập tên người dùng"
-                android:imeOptions="actionNext"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_15ssp"
-                />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            >
 
-            <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên người dùng"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_13ssp"
+            android:inputType="text"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@color/input_background"
+                android:layout_height="wrap_content"
                 android:hint="Email"
-                android:imeOptions="actionNext"
-                android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_13ssp"
                 />
 
-            <EditText
-                android:id="@+id/inputPassword"
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:background="@color/input_background"
-                android:hint="Mật khẩu"
-                android:imeOptions="actionNext"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_13ssp"
-                />
-            <EditText
+                app:passwordToggleEnabled="true"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Mật khẩu"
+                    android:inputType="textPassword"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_13ssp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:passwordToggleEnabled="true"
+           >
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputConfirmPassword"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:background="@color/input_background"
+                android:layout_height="wrap_content"
                 android:hint="Xác nhận mật khẩu"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_13ssp"
                 />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         
     <FrameLayout
         android:layout_width="match_parent"

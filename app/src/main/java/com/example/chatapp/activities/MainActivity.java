@@ -114,7 +114,15 @@ public class MainActivity extends BaseActivity implements ConversationListener {
             }
         });
         binding.fabNewchat.setOnClickListener(v->
-                startActivity(new Intent(getApplicationContext(),UsersActivity.class)));}
+                startActivity(new Intent(getApplicationContext(),UsersActivity.class)));
+
+        binding.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+            }
+        });
+    }
 
     private void loadUserDetails() {
         binding.txtName.setText(preferenceManager.getString(Constants.KEY_NAME));

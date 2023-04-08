@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_25sdp">
+        android:layout_marginTop="@dimen/_35sdp">
 
         <ImageView
             android:id="@+id/imgIcon"
@@ -23,46 +23,45 @@
             android:src="@drawable/img"
             android:layout_marginTop="@dimen/_10sdp"/>
 
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/_8sdp"-->
-<!--            android:text="Login to continue"-->
-<!--            android:textColor="@color/primary_text"-->
-<!--            android:textSize="@dimen/_15ssp"-->
-<!--            android:textStyle="bold"/>-->
-
-        <EditText
-            android:id="@+id/inputEmail"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:background="@color/input_background"
-            android:hint="Email"
-            android:imeOptions="actionNext"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp"
-            />
-        <EditText
-            android:id="@+id/inputPassword"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Email"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
-            android:background="@color/input_background"
-            android:hint="Mật khẩu"
-            android:imeOptions="actionDone"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp"
-            />
+            app:passwordToggleEnabled="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mật khẩu"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -73,12 +72,11 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-
+            android:layout_height="@dimen/_44sdp"
             android:text="Đăng Nhập"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             app:cornerRadius="@dimen/_8sdp"/>
 
         <ProgressBar
@@ -88,9 +86,7 @@
             android:layout_gravity="center"
             android:visibility="invisible"/>
 
-
     </FrameLayout>
-
 
         <TextView
             android:id="@+id/txtcreatNewAccount"
