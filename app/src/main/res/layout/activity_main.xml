@@ -23,13 +23,11 @@
         />
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageSignOut"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_19sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:layout_marginRight="@dimen/_16sdp"
-        android:background="@drawable/background_icon"
-        android:padding="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_17sdp"
         android:src="@drawable/ic_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

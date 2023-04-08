@@ -113,9 +113,13 @@ public class ChatActivity extends BaseActivity {
                 }
             }
             if(isReceiverAvailable){
-                binding.textAvailability.setVisibility(View.VISIBLE);
+                binding.active.setVisibility(View.VISIBLE);
+                binding.txtActive.setVisibility(View.VISIBLE);
+                binding.txtNotActive.setVisibility(View.GONE);
             }else {
-                binding.textAvailability.setVisibility(View.GONE);
+                binding.active.setVisibility(View.GONE);
+                binding.txtActive.setVisibility(View.GONE);
+                binding.txtNotActive.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -211,7 +215,6 @@ public class ChatActivity extends BaseActivity {
             );
         }
     }
-
     private void checkForConversationRemotely(String senderId, String receiverId){
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
                 .whereEqualTo(Constants.KEY_SENDER_ID,senderId)
