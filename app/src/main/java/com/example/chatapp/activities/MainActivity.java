@@ -1,12 +1,18 @@
 package com.example.chatapp.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.chatapp.R;
 import com.example.chatapp.adapters.RecentConversationsAdapter;
@@ -39,6 +45,8 @@ public class MainActivity extends BaseActivity implements ConversationListener {
     private RecentConversationsAdapter conversationsAdapter;
     private FirebaseFirestore database;
 
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +67,52 @@ public class MainActivity extends BaseActivity implements ConversationListener {
         database = FirebaseFirestore.getInstance();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Nhấn trở lại 2 lần để thoát", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+
     private void setListeners(){
-        binding.imageSignOut.setOnClickListener(v -> signOut());
+//        binding.imageSignOut.setOnClickListener(v -> signOut());
+
+        binding.imageSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
+
+                        .setTitle("Thông Báo")
+
+                        .setMessage("Bạn có muốn đăng xuất không")
+
+                        .setPositiveButton("Không", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .setNegativeButton("Có", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                               signOut();
+                            }
+                        })
+                        .show();
+            }
+        });
         binding.fabNewchat.setOnClickListener(v->
                 startActivity(new Intent(getApplicationContext(),UsersActivity.class)));}
 
@@ -152,6 +204,11 @@ public class MainActivity extends BaseActivity implements ConversationListener {
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
                     preferenceManager.clear();
+
+                    SharedPreferences preferences =getSharedPreferences("MyPreferences",this.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.clear().commit();
+
                     startActivity(new Intent(getApplicationContext(),SignInactivity.class));
                     finish();
                 })
