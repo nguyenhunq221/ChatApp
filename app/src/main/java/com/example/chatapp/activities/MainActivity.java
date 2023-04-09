@@ -193,6 +193,7 @@ public class MainActivity extends BaseActivity implements ConversationListener {
     }
 
     private void updateToken(String token) {
+
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference =
                 database.collection(Constants.KEY_COLLECTION_USERS).document(preferenceManager.getString(Constants.KEY_USER_ID));

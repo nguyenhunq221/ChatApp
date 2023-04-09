@@ -109,7 +109,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_height="@dimen/_47sdp"
         android:text="Cập nhật"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
