@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/logo"
+        android:icon="@drawable/ic_logo"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/england_flag"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom" />
+
+</menu>

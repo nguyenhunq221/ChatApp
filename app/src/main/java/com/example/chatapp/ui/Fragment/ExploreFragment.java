@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.chatapp.PremierLeague.PremierLeagueActivity;
 import com.example.chatapp.R;
 import com.example.chatapp.databinding.FragmentExploreBinding;
 import com.example.chatapp.ui.activities.WebViewActivity;
@@ -77,6 +78,13 @@ public class ExploreFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), WebViewActivity.class);
                 intent.putExtra("urlnew","https://vietnamnet.vn/thoi-tiet-ha-noi-15-4-mua-to-dem-chuyen-lanh-2132803.html");
                 startActivity(intent);
+            }
+        });
+
+        binding.cardViewLeague.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PremierLeagueActivity.class));
             }
         });
     }
