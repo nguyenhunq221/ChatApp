@@ -57,5 +57,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
     //circleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //lotties
+    implementation "com.airbnb.android:lottie:6.0.0"
 
 }

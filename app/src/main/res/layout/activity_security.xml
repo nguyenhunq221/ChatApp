@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBarMenu"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Chính sách bảo mật"
+            app:navigationIcon="@drawable/ic_back2"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.SecurityActivity">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:text="Chính sách bảo mật"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="Minh bạch về các thông tin thu thập thu thập từ người dùng. Theo đó, chúng tôi sẽ thu thập những thông tin sau:
+Thông tin cá nhân (gồm tên, số điện thoại, địa chỉ, chứng minh nhân dân,…).
+Thông tin chung về cấu hình điện thoại, phiên bản mà bạn đang sử dụng.
+Thông tin về vị trí của bạn. Dữ liệu về vị trí địa lý của bạn sẽ được lưu trữ trên máy.
+Danh bạ điện thoại của người dùng sẽ được lưu trữ trên máy chủ nhằm hỗ trợ tốt nhất cho người dùng có thể sử dụng hiệu quả.
+Tuyệt đối sẽ không can thiệp vào nội dung tin nhắn và tất cả các hình thức trao đổi qua lại giữa các người dùng với nhau."
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_18ssp"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

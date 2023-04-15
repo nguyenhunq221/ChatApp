@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:scrollbars="none"
     android:padding="@dimen/_24sdp"
-    tools:context=".activities.SignInactivity">
+    tools:context=".ui.SignInactivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,10 +34,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Email"
+                android:maxLines="1"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_13ssp"
                 />
-
         </com.google.android.material.textfield.TextInputLayout>
 
 

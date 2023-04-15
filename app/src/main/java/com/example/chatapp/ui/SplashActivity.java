@@ -1,4 +1,4 @@
-package com.example.chatapp.activities;
+package com.example.chatapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
-import com.example.chatapp.R;
 import com.example.chatapp.databinding.ActivitySplashBinding;
+import com.example.chatapp.ui.Fragment.NavigationActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -20,14 +19,12 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding =ActivitySplashBinding.inflate(getLayoutInflater());
+        binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-        amimSplash = AnimationUtils.loadAnimation(this,
-                R.anim.slide);
-        binding.logoSplash.startAnimation(amimSplash);
-
+//        amimSplash = AnimationUtils.loadAnimation(this,
+//                R.anim.slide);
+//        binding.logoSplash.startAnimation(amimSplash);
 
         SharedPreferences sharedPref = this.getSharedPreferences("MyPreferences", this.MODE_PRIVATE);
         boolean hasLogIn = sharedPref.getBoolean("hasLogIn", false);
@@ -36,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (hasLogIn) {
-                    Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent mainIntent = new Intent(SplashActivity.this, NavigationActivity.class);
                     SplashActivity.this.startActivity(mainIntent);
                     SplashActivity.this.finish();
                 }else {
@@ -46,6 +43,6 @@ public class SplashActivity extends AppCompatActivity {
                 }
 
             }
-        }, 1500);
+        }, 3900);
     }
 }

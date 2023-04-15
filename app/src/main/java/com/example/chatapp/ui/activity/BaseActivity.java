@@ -1,4 +1,4 @@
-package com.example.chatapp.activities;
+package com.example.chatapp.ui.activity;
 
 import android.os.Bundle;
 
